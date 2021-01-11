@@ -4,7 +4,7 @@ import { Test } from '../helpers/test'
 
 export const Home = () => {
 
-    // vars etc
+    
     function getColors() {
         console.log("initializing")
         // calling
