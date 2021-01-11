@@ -1,19 +1,19 @@
 {
   "name": "coding",
   "version": "1.0.0",
-  "description": "coding project",
+  "description": "BN coding project",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
-    "url": "TODO:"
+    "url": "https://github.com/clreagan/mithril-go-test"
   },
-  "author": "",
+  "author": "caleb r",
   "license": "ISC",
   "bugs": {
-    "url": "TODO:"
+    "url": "stopbotheringme.com"
   },
   "homepage": "",
   "dependencies": {

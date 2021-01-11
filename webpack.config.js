@@ -5,7 +5,7 @@ module.exports = env => {
 
 
 	// Set the dev only variables
-	server = "'http://localhost:8000'";
+	server = "'http://localhost:8002'";
 
 	return {
 		entry: './src/index.jsx',
