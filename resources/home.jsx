@@ -8,11 +8,11 @@ export const Home = () => {
     function getColors() {
         console.log("initializing")
         // calling
-        m
-            .request({
+        m.request({
                 method: 'GET',
-                url: `http://localhost:8002/color/retrieve`,
+                url: `http://localhost:8001/color/retrieve`,
             })
+            //gives a response on button press
             .then((response) => {
                 if (response) {
                     let data = response
@@ -22,18 +22,19 @@ export const Home = () => {
                 }
             })
     }
-
+    //begins to send color to colorhandler, checking against list of supported colors
     function convertColor() {
         var colorEntry = document.querySelector(".convertValue")
         var entryValue = colorEntry.value
         m
             .request({
                 method: 'PUT',
-                url: `http://localhost:8002/color/handle`,
+                url: `http://localhost:8001/color/handle`,
                 body: {
                     "value": entryValue
                 }
             })
+            //should return hex! otherwise error
             .then((response) => {
                 if (response) {
                     let data = response
@@ -48,7 +49,7 @@ export const Home = () => {
                         return
                     }
                     document.querySelector(".returnText").innerHTML = `Error! ` + data
-
+                    
                 }
             })
 

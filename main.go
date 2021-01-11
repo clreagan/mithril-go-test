@@ -1,10 +1,11 @@
 package main
 
 import (
-	"color"
 	"net/http"
 	"path"
 	"strings"
+
+	"github.com/clreagan/mithril-go-test/color"
 )
 
 type API struct {
@@ -24,6 +25,7 @@ func (api *API) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// time to shine, process starting
 func main() {
 	println("main func in progress..")
 
@@ -31,10 +33,10 @@ func main() {
 		ColorHandler: new(color.Handler),
 	}
 
-	http.ListenAndServe(":8003", api)
+	http.ListenAndServe(":8002", api)
 }
 
-//no idea what this does
+//assuming this wizardry has to do with file path
 func shiftPath(p string) (head, tail string) {
 	p = path.Clean("/" + p)
 	i := strings.Index(p[1:], "/") + 1

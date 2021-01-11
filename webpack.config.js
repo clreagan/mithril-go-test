@@ -5,7 +5,7 @@ module.exports = env => {
 
 
 	// Set the dev only variables
-	server = "'http://localhost:8002'";
+	server = "'http://localhost:8001'";
 
 	return {
 		entry: './src/index.jsx',
@@ -16,7 +16,7 @@ module.exports = env => {
 		},
 		devServer: {
 			host: "localhost",
-			port: 8000,
+			port: 8001,
 			https: false,
 			contentBase: path.resolve(__dirname, 'dist'),
 			historyApiFallback: true

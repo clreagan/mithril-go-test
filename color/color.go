@@ -14,16 +14,21 @@ type Handler struct{}
 type Request struct {
 }
 
+//returns hopefully good response, otherwise error + no info
 type Response struct {
 	Status  string `json:"status"`
 	Message string `json:"message"`
 	Info    string `json:"info,omitempty"`
 }
 
+//list of plaintext / hex color pairs
 var colorOptions = map[string]string{
 	"blue":   "0000FF",
 	"yellow": "FFFF00",
 	"red":    "FF0000",
+	"green":  "00FF00",
+	"purple": "800080",
+	"grey":   "808080",
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -39,7 +44,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var head string
 	head, r.URL.Path = shiftPath(r.URL.Path)
 	// STOLEN FUNCTION AGAIN
-
+	//switch statement for user inPUT
 	switch head {
 	case "handle":
 		switch r.Method {
@@ -54,6 +59,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		default:
 			fmt.Println("Invalid input")
 		}
+	// switch for GET button
 	case "retrieve":
 		switch r.Method {
 		case "GET":
@@ -69,6 +75,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// response for button press
 func getColors() []string {
 	var list []string
 
@@ -86,6 +93,7 @@ type Color struct {
 	Value string `json:"value"`
 }
 
+//starting the conversion...
 func convertColor(value []byte) string {
 
 	var c Color
@@ -103,6 +111,7 @@ func convertColor(value []byte) string {
 			return resultHex
 		}
 	}
+	//if bad input
 	return "Color not yet supported"
 }
 
