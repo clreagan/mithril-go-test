@@ -32,10 +32,10 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	body, _ := ioutil.ReadAll(r.Body)
 
-	// STOLEN FUNCTION AGAIN
+	
 	var head string
 	head, r.URL.Path = shiftPath(r.URL.Path)
-	// STOLEN FUNCTION AGAIN
+	
 	//switch statement for user inPUT
 	switch head {
 	case "handle":
@@ -107,7 +107,7 @@ func convertColor(value []byte) string {
 	return "Color not yet supported"
 }
 
-// Shamelessly stolen helper function to take the path from URL
+
 func shiftPath(p string) (head, tail string) {
 	p = path.Clean("/" + p)
 	i := strings.Index(p[1:], "/") + 1
