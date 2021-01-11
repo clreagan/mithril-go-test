@@ -6,6 +6,8 @@
 
 ###TODO: 
 
+-create and implement mithril components
+
 
 -comment more stuff
 
@@ -15,4 +17,12 @@
 
 -make it prettier
 
+
+INSTRUCTIONS:
+
+npm-install
+
+go run main.go
+
+npm run start
 
