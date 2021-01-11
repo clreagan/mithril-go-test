@@ -14,13 +14,6 @@ type Handler struct{}
 type Request struct {
 }
 
-//returns hopefully good response, otherwise error + no info
-type Response struct {
-	Status  string `json:"status"`
-	Message string `json:"message"`
-	Info    string `json:"info,omitempty"`
-}
-
 //list of plaintext / hex color pairs
 var colorOptions = map[string]string{
 	"blue":   "0000FF",
