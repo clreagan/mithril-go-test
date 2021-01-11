@@ -11,8 +11,7 @@ import (
 
 type Handler struct{}
 
-type Request struct {
-}
+type Request struct {}
 
 //list of plaintext / hex color pairs
 var colorOptions = map[string]string{
