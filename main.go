@@ -33,7 +33,7 @@ func main() {
 		ColorHandler: new(color.Handler),
 	}
 
-	http.ListenAndServe(":8002", api)
+	http.ListenAndServe(":8001", api)
 }
 
 //assuming this wizardry has to do with file path

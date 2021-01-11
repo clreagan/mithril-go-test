@@ -12,7 +12,7 @@ export const Home = () => {
                 method: 'GET',
                 url: `http://localhost:8001/color/retrieve`,
             })
-            //gives a response on button press
+            //gives a response from api for supported colors
             .then((response) => {
                 if (response) {
                     let data = response
