@@ -13,10 +13,10 @@ type API struct {
 }
 
 func (api *API) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	// STOLEN FUNCTION
+	
 	var head string
 	head, r.URL.Path = shiftPath(r.URL.Path)
-	// STOLEN FUNCTION
+	
 
 	switch head {
 	case "color":
